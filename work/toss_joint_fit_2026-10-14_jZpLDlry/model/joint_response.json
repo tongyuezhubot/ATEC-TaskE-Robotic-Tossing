@@ -1,0 +1,104 @@
+{
+  "format": "atec_joint_response_v1",
+  "calibrated": true,
+  "dt": 0.02,
+  "action_scale": 0.5,
+  "default_q": [
+    0.0,
+    1.2,
+    -1.5,
+    0.0,
+    1.2,
+    0.0,
+    0.035,
+    -0.035
+  ],
+  "alpha": [
+    0.18,
+    0.18,
+    0.18,
+    0.18,
+    0.18,
+    0.18
+  ],
+  "calibration": {
+    "passed": true,
+    "joints": [
+      {
+        "joint": 1,
+        "train_segments": 195,
+        "val_segments": 45,
+        "passed": true,
+        "alpha": 0.18,
+        "time_constant_s": 0.10078057644177611,
+        "fitted_rmse_rad": 0.0021147160449409307,
+        "instantaneous_rmse_rad": 0.08290934991312156
+      },
+      {
+        "joint": 2,
+        "train_segments": 326,
+        "val_segments": 77,
+        "passed": true,
+        "alpha": 0.18,
+        "time_constant_s": 0.10078057644177611,
+        "fitted_rmse_rad": 0.0020229449092396766,
+        "instantaneous_rmse_rad": 0.08118053586639513
+      },
+      {
+        "joint": 3,
+        "train_segments": 272,
+        "val_segments": 68,
+        "passed": true,
+        "alpha": 0.18,
+        "time_constant_s": 0.10078057644177611,
+        "fitted_rmse_rad": 0.002580886061892278,
+        "instantaneous_rmse_rad": 0.056883991640090885
+      },
+      {
+        "joint": 4,
+        "train_segments": 192,
+        "val_segments": 38,
+        "passed": true,
+        "alpha": 0.18,
+        "time_constant_s": 0.10078057644177611,
+        "fitted_rmse_rad": 0.0018784086480438586,
+        "instantaneous_rmse_rad": 0.11019506237086675
+      },
+      {
+        "joint": 5,
+        "train_segments": 154,
+        "val_segments": 46,
+        "passed": true,
+        "alpha": 0.18,
+        "time_constant_s": 0.10078057644177611,
+        "fitted_rmse_rad": 0.0017697443831160597,
+        "instantaneous_rmse_rad": 0.03914090535865368
+      },
+      {
+        "joint": 6,
+        "train_segments": 246,
+        "val_segments": 52,
+        "passed": true,
+        "alpha": 0.18,
+        "time_constant_s": 0.10078057644177611,
+        "fitted_rmse_rad": 0.001809885216078258,
+        "instantaneous_rmse_rad": 0.13265865510432107
+      }
+    ]
+  },
+  "train_seeds": [
+    43,
+    44,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "val_seeds": [
+    45,
+    52,
+    53
+  ]
+}

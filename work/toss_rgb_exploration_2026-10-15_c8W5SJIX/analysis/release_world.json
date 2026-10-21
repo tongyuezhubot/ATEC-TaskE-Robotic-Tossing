@@ -1,0 +1,585 @@
+{
+  "format": "atec_release_world_v3",
+  "calibrated": true,
+  "physics": {
+    "dt": 0.02,
+    "physics_dt": 0.005,
+    "object_linear_damping": 2.0,
+    "planning_min_remaining_apex": 0.024,
+    "release_ee_xyz": [
+      1.16,
+      -0.23,
+      1.176642648
+    ],
+    "pre_throw_delta": [
+      0.04,
+      0.08,
+      -0.07
+    ],
+    "throw_tilt_delta_deg": -10.0,
+    "position_lead_seconds": 0.0,
+    "joint_response_alpha": [
+      0.18,
+      0.18,
+      0.18,
+      0.18,
+      0.18,
+      0.18
+    ],
+    "throw_primitive": "joint_swing",
+    "gripper_delay_prior": 0.06,
+    "banana_delay_prior": 0.04,
+    "follow_through": 0.02,
+    "brake_seconds": 0.3,
+    "table_z": 0.826642648,
+    "basket_xyz": [
+      1.08,
+      -0.3,
+      0.926642648
+    ],
+    "basket_outer_half_xy": [
+      0.237356,
+      0.158346
+    ],
+    "basket_rim_z": 0.97982264,
+    "held_rim_clearance": 0.1,
+    "root_xyz": [
+      1.404253903,
+      0.0,
+      0.826642648
+    ],
+    "object_com_offsets": [
+      [
+        0.0004768353537656367,
+        0.000664581370074302,
+        -0.0002919909602496773
+      ],
+      [
+        0.0002076068049063906,
+        0.01623924821615219,
+        0.00018429271585773677
+      ],
+      [
+        -0.004321056883782148,
+        0.00022860686294734478,
+        -0.0004944115644320846
+      ]
+    ],
+    "grasp_offsets": [
+      0.14,
+      0.165,
+      0.09
+    ],
+    "banana_pinch_distance": 0.12,
+    "banana_keep_grasp_orientation": true,
+    "banana_held_local_z_range": [
+      0.095,
+      0.132
+    ],
+    "banana_held_lateral_max": 0.03,
+    "lower": [
+      0.0,
+      0.45,
+      0.4,
+      0.0
+    ],
+    "upper": [
+      0.7,
+      0.9,
+      0.85,
+      0.12
+    ],
+    "joint_swing_duration": 0.6,
+    "joint_swing_lower": [
+      -0.45,
+      -0.85,
+      -0.85,
+      0.4
+    ],
+    "joint_swing_upper": [
+      0.9,
+      0.65,
+      0.65,
+      0.8
+    ],
+    "lift_clearance": 0.2,
+    "max_joint_speed": 3.0,
+    "max_joint_acceleration": 20.0,
+    "carry_max_joint_speed": 1.5,
+    "carry_max_joint_acceleration": 8.0,
+    "braking_mode": "bounded_joint_after_detach_v2",
+    "flight_model": "discrete_linear_drag_v1"
+  },
+  "supported_object_ids": [
+    3
+  ],
+  "input_fields": [
+    "initial_arm_q6",
+    "object_tool_offset_xyz3",
+    "cem_parameters4",
+    "swing_duration1"
+  ],
+  "target_fields": [
+    "first_observed_freeflight_com_error_xyz3",
+    "first_observed_freeflight_velocity_error_xyz3"
+  ],
+  "state_time_basis": "first_detected_freeflight_observation",
+  "calibration": {
+    "passed": true,
+    "train_samples": 24,
+    "val_samples": 5,
+    "train_seeds": [
+      66,
+      67,
+      70,
+      73,
+      75,
+      78,
+      81,
+      84,
+      101,
+      102,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      200,
+      202,
+      203,
+      205
+    ],
+    "val_seeds": [
+      115,
+      116,
+      117,
+      118,
+      207
+    ],
+    "baseline_normalized_mse": 1.7503698571105906,
+    "fitted_normalized_mse": 0.36430839004674903,
+    "position_rmse_m": 0.025528988598211247,
+    "velocity_rmse_m_s": 0.14920150041624844,
+    "supported_validation_fraction": 1.0,
+    "baseline_landing_rmse_m": 0.08336029447704194,
+    "fitted_landing_rmse_m": 0.030034584776822745,
+    "validation": [
+      {
+        "seed": 207,
+        "supported": true,
+        "policy_inputs": "rgb",
+        "predicted_velocity": [
+          0.3531659968609274,
+          -0.796389568690581,
+          0.6826912786200362
+        ],
+        "label_velocity": [
+          0.3570142090320587,
+          -0.7637379169464111,
+          0.5287590026855469
+        ],
+        "landing_error_m": 0.0037854111832968775
+      },
+      {
+        "seed": 115,
+        "supported": true,
+        "policy_inputs": "oracle",
+        "predicted_velocity": [
+          0.20798415720973215,
+          -0.8328563216816588,
+          0.7071885839056441
+        ],
+        "label_velocity": [
+          0.17616572976112366,
+          -0.817342221736908,
+          0.8074812889099121
+        ],
+        "landing_error_m": 0.024052457861152506
+      },
+      {
+        "seed": 116,
+        "supported": true,
+        "policy_inputs": "oracle",
+        "predicted_velocity": [
+          0.09957143578801486,
+          -0.7707373804272644,
+          0.5087982020200609
+        ],
+        "label_velocity": [
+          0.060909491032361984,
+          -0.6545897722244263,
+          0.7365854382514954
+        ],
+        "landing_error_m": 0.060359600170227075
+      },
+      {
+        "seed": 117,
+        "supported": true,
+        "policy_inputs": "oracle",
+        "predicted_velocity": [
+          0.371245312126668,
+          -0.8811816125704053,
+          0.677762952869243
+        ],
+        "label_velocity": [
+          0.3524204194545746,
+          -0.8921277523040771,
+          0.7396087050437927
+        ],
+        "landing_error_m": 0.007766566863813602
+      },
+      {
+        "seed": 118,
+        "supported": true,
+        "policy_inputs": "oracle",
+        "predicted_velocity": [
+          0.11994260290429909,
+          -0.9080527020971018,
+          0.6373407513513429
+        ],
+        "label_velocity": [
+          0.08682974427938461,
+          -0.9609603881835938,
+          0.6496213674545288
+        ],
+        "landing_error_m": 0.01462636157873355
+      }
+    ],
+    "validation_by_policy_inputs": {
+      "oracle": {
+        "samples": 4,
+        "position_rmse_m": 0.027279139502772987,
+        "velocity_rmse_m_s": 0.1470793611960823,
+        "landing_rmse_m": 0.03352630338910828,
+        "supported_fraction": 1.0,
+        "passed": true
+      },
+      "rgb": {
+        "samples": 1,
+        "position_rmse_m": 0.016794061039278146,
+        "velocity_rmse_m_s": 0.15740420792630785,
+        "landing_rmse_m": 0.0037854111832968775,
+        "supported_fraction": 1.0,
+        "passed": true
+      }
+    }
+  },
+  "feature_mean": [
+    -0.13821929786354303,
+    1.7470625708500547,
+    -1.5870954096317291,
+    0.08735828738038738,
+    0.9361179267366723,
+    0.06405076601852973,
+    -0.06439003833706271,
+    -0.003435487502942262,
+    -0.10641629304556999,
+    0.7757872275362748,
+    -0.45713390249134905,
+    -0.5879784134682751,
+    0.4825523647745833,
+    0.6499999999999998
+  ],
+  "feature_std": [
+    0.1,
+    0.15051244101987968,
+    0.19553754777509952,
+    0.1,
+    0.1,
+    0.15503401287468768,
+    0.02,
+    0.02,
+    0.02,
+    0.08,
+    0.10438596891212669,
+    0.12374043827379387,
+    0.04,
+    0.07071067811865478
+  ],
+  "feature_bounds": [
+    [
+      -0.361621567606926,
+      0.06461460292339324
+    ],
+    [
+      1.1854891061782837,
+      2.1139416456222535
+    ],
+    [
+      -2.0477846384048464,
+      -0.9606764793395997
+    ],
+    [
+      -0.0955646313726902,
+      0.28267917931079867
+    ],
+    [
+      0.7159281253814697,
+      1.1790348052978514
+    ],
+    [
+      -0.3811387956142426,
+      0.323581600189209
+    ],
+    [
+      -0.09723024608557039,
+      -0.033683474599929056
+    ],
+    [
+      -0.025168820679981652,
+      0.021255347909217927
+    ],
+    [
+      -0.13375663400036594,
+      -0.07801164856689537
+    ],
+    [
+      0.5680309099791964,
+      0.9639260170268399
+    ],
+    [
+      -0.6818128518453441,
+      -0.09878560365111913
+    ],
+    [
+      -0.8534439712972297,
+      -0.28058970315800685
+    ],
+    [
+      0.3955276624390754,
+      0.5806535189935849
+    ],
+    [
+      0.5499999999999999,
+      0.8
+    ]
+  ],
+  "weights": [
+    [
+      -0.0034474594876616315,
+      -0.00046996123384298596,
+      0.0001818028095630416,
+      6.385992922084892e-05,
+      0.0002839500516330377,
+      0.0006126713658245568,
+      0.0005622056377837769,
+      0.0005063851719552131,
+      -6.661819895703718e-06,
+      -0.000555746691176711,
+      0.00040221475968131126,
+      -1.9030718932290674e-06,
+      -4.400194121066762e-05,
+      -0.0003809978912673669,
+      -0.0005611695956169007
+    ],
+    [
+      -0.007306850706583834,
+      0.0011123446489559074,
+      -0.0016147919316495615,
+      0.0002912508948956225,
+      -0.0006233431265368447,
+      -0.001365335143684566,
+      -0.002176374175732975,
+      -0.0007978636216600843,
+      3.308019912887526e-05,
+      0.0026456928920205154,
+      -0.0014867353466755523,
+      -0.0013431894219061939,
+      0.0026483657579170193,
+      0.0031755105921957186,
+      0.0022157034892216947
+    ],
+    [
+      -0.009302905771739308,
+      -0.000943160555998084,
+      0.0011819167800199795,
+      -0.00012117552232025231,
+      0.0004946012520369353,
+      0.0006179870654173421,
+      0.0013593408463213133,
+      0.0006090027530945342,
+      -2.0091905591386546e-06,
+      -0.0018775298192637028,
+      0.0006745244542826079,
+      0.0010727143816635382,
+      -0.0015736710956510394,
+      -0.001443159069697964,
+      -0.0014655132946686678
+    ],
+    [
+      -0.18849185590775452,
+      0.0007385437002744456,
+      -0.0031369133816764186,
+      0.004289528401571118,
+      -0.0005307418703462473,
+      0.0021471142449734355,
+      -0.004942824090142827,
+      0.005229540597028401,
+      1.0643545558238196e-05,
+      -0.003969443161365494,
+      0.0037027485421857135,
+      0.007626814849176902,
+      0.013011226670233224,
+      0.008252520716617587,
+      0.00562506049369278
+    ],
+    [
+      -0.0298076545318267,
+      -0.0012068838828412471,
+      -0.0045569557143255975,
+      0.002644233129023782,
+      0.0008970275600650557,
+      0.0010021175349934667,
+      -0.005847587219539617,
+      0.002877461873636962,
+      -0.001270395755554323,
+      0.0028397894737936073,
+      0.007374417684220896,
+      -0.0015747765521762042,
+      -0.0006992258677827112,
+      0.0003645895834477778,
+      0.006324632785794834
+    ],
+    [
+      -0.508461291268953,
+      0.004123608027703684,
+      -0.01589997929112324,
+      0.006027765498122878,
+      -0.002080605399750493,
+      -0.006944316584053543,
+      -0.0192258766387408,
+      -0.0019048276751496384,
+      0.0018950649086517503,
+      0.01836886559547057,
+      -0.014505231425439576,
+      -0.0012814906767902063,
+      0.041500863646171844,
+      0.04629684583261174,
+      0.01940306767451529
+    ]
+  ],
+  "release_dynamics_contract": {
+    "dt": 0.02,
+    "physics_dt": 0.005,
+    "object_linear_damping": 2.0,
+    "release_ee_xyz": [
+      1.16,
+      -0.23,
+      1.176642648
+    ],
+    "pre_throw_delta": [
+      0.04,
+      0.08,
+      -0.07
+    ],
+    "throw_tilt_delta_deg": -10.0,
+    "position_lead_seconds": 0.0,
+    "joint_response_alpha": [
+      0.18,
+      0.18,
+      0.18,
+      0.18,
+      0.18,
+      0.18
+    ],
+    "throw_primitive": "joint_swing",
+    "gripper_delay_prior": 0.06,
+    "banana_delay_prior": 0.04,
+    "follow_through": 0.02,
+    "brake_seconds": 0.3,
+    "table_z": 0.826642648,
+    "basket_xyz": [
+      1.08,
+      -0.3,
+      0.926642648
+    ],
+    "basket_outer_half_xy": [
+      0.237356,
+      0.158346
+    ],
+    "basket_rim_z": 0.97982264,
+    "held_rim_clearance": 0.1,
+    "root_xyz": [
+      1.404253903,
+      0.0,
+      0.826642648
+    ],
+    "object_com_offsets": [
+      [
+        0.0004768353537656367,
+        0.000664581370074302,
+        -0.0002919909602496773
+      ],
+      [
+        0.0002076068049063906,
+        0.01623924821615219,
+        0.00018429271585773677
+      ],
+      [
+        -0.004321056883782148,
+        0.00022860686294734478,
+        -0.0004944115644320846
+      ]
+    ],
+    "grasp_offsets": [
+      0.14,
+      0.165,
+      0.09
+    ],
+    "banana_pinch_distance": 0.12,
+    "banana_keep_grasp_orientation": true,
+    "banana_held_lateral_max": 0.03,
+    "lower": [
+      0.0,
+      0.45,
+      0.4,
+      0.0
+    ],
+    "upper": [
+      0.7,
+      0.9,
+      0.85,
+      0.12
+    ],
+    "lift_clearance": 0.2,
+    "max_joint_speed": 3.0,
+    "max_joint_acceleration": 20.0,
+    "carry_max_joint_speed": 1.5,
+    "carry_max_joint_acceleration": 8.0,
+    "braking_mode": "bounded_joint_after_detach_v2",
+    "flight_model": "discrete_linear_drag_v1"
+  },
+  "historical_training_runs": [
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_batch_2026-10-14_nudgkTHX/object3_seed70/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_batch_2026-10-14_nudgkTHX/object3_seed73/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_batch_2026-10-14_nudgkTHX/object3_seed75/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_batch_2026-10-14_nudgkTHX/object3_seed78/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_batch_2026-10-14_nudgkTHX/object3_seed81/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_batch_2026-10-14_nudgkTHX/object3_seed84/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed101/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed102/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed104/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed105/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed106/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed107/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed108/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed109/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed110/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed111/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed112/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed113/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_jointswing_delay_2026-10-14_JgAy2Vnj/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_jointswing_delay_2026-10-14_K3BdSgUp/episode"
+  ],
+  "historical_validation_runs": [
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed115/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed116/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed117/episode",
+    "/root/Desktop/ATEC_TaskE_Standalone/work/toss_banana_coverage_2026-10-14_HGO73mqZ/object3_seed118/episode"
+  ]
+}

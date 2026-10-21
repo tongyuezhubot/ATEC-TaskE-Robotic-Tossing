@@ -1,0 +1,20 @@
+{
+  "format": "atec_throw_profiles_v1",
+  "objects": {
+    "3": {
+      "planner_config": "work/throw_motion_banana_2026-10-14_world_eval.json",
+      "world_model": "work/toss_rgb_exploration_2026-10-15_c8W5SJIX/analysis/release_world.json",
+      "perception_model": "work/toss_pose_padpoint_2026-10-14_o1eJfhcA/usage_calibration/rgb_pose_tracking.pt"
+    },
+    "2": {
+      "planner_config": "work/throw_motion_mustard_rgb_stance_2026-10-15.json",
+      "world_model": "work/toss_mustard_timing_world_2026-10-15_mhlU2wdI/analysis_proposals/release_world.json",
+      "perception_model": "work/toss_pose_mustard_newgrasp_2026-10-15_EswKXzzx/mustard_usage_calibration/rgb_pose_tracking.pt"
+    },
+    "1": {
+      "planner_config": "work/throw_motion_sugar_chain_2026-10-15.json",
+      "world_model": "work/toss_sugar_neighbor_coverage_2026-10-15_yUgAShSc/analysis_reference_expanded/release_world.json",
+      "perception_model": null
+    }
+  }
+}
